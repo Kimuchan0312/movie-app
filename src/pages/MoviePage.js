@@ -83,7 +83,7 @@ function MoviePage() {
   return (
     <Stack
       spacing={2}
-      direction={{ xs: "column", sm: "row" }}
+      direction={{ xs: "column", sm: "row"}}
       useFlexGap
       flexWrap="wrap"
     >
