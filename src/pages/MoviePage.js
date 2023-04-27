@@ -83,52 +83,33 @@ function MoviePage() {
   return (
     <Stack
       spacing={2}
-      direction={{ xs: "column", sm: "row"}}
+      direction={{ xs: "column", sm: "row" }}
       useFlexGap
       flexWrap="wrap"
     >
-      <NavBar
+    <NavBar
         blackBackground
-        sx={{ height: "70px", marginBottom: "10px"}}
+        sx={{ height: "50px", width: "100%" }}
         setValue={setValue}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
-      <Stack
-        direction={{ xs: "column", sm: "row" }}
-        alignItems={{ xs: "stretch", sm: "flex-start" }}
-        justifyContent="space-between"
-        flexWrap="wrap"
-        sx={{ width: "100%" }}
-      >
-        <FormProvider methods={methods}>
-          <MovieFilter
-            resetFilter={reset}
-            methods={methods}
-            sx={{
-              width: { xs: "100%", sm: "auto" },
-              marginBottom: { xs: 2, sm: 0 },
-            }}
-          />
-        </FormProvider>
+    <Stack direction={{ xs: "column", sm: "row" }}
+    sx={{ width: { xs: "100%", sm: "100%" }}}>
+      <FormProvider methods={methods}>
+        <MovieFilter resetFilter={reset} methods={methods} />
+      </FormProvider>
 
-        <Stack sx={{ flexGrow: 1, padding: "30px 40px" }}>
-          <FormProvider methods={methods}>
-            <Stack
-              spacing={2}
-              direction={{ xs: "column", sm: "row" }}
-              alignItems={{ sm: "center" }}
-              justifyContent="space-between"
-              mb={2}
-            ></Stack>
-          </FormProvider>
+      <Stack sx={{ flexGrow: 1, padding: "30px 40px" }}>
+        <FormProvider methods={methods}>
           <Stack
-            sx={{
-              flexGrow: 1,
-              padding: { xs: "30px 20px", sm: "30px 40px" },
-              width: { xs: "100%", sm: "auto" },
-            }}
-          >
+            spacing={2}
+            direction={{ xs: "column", sm: "row" }}
+            alignItems={{ sm: "center" }}
+            justifyContent="space-between"
+            mb={2}
+          ></Stack>
+        </FormProvider>
             <Box>
               {loading ? (
                 <LoadingScreen />
@@ -145,7 +126,6 @@ function MoviePage() {
           </Stack>
         </Stack>
       </Stack>
-    </Stack>
   );
 }
 
