@@ -8,12 +8,10 @@ import { CardActionArea, Typography } from "@mui/material";
 function MovieCard({ movie }) {
   const navigate = useNavigate();
   return (
-    <Card sx={{ maxWidth: 300, height: 300 }} onClick={() => navigate(`/movies/${movie.id}`)}>
+    <Card sx={{ height: 300, width: { xs: "100", sm: "150", lg: "200" }, }} onClick={() => navigate(`/movies/${movie.id}`)}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="100"
-          width="300"
           image={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
           alt={movie.original_title}
         />

@@ -3,8 +3,8 @@ import MovieCard from "./MovieCard";
 
 function MovieList({ movies, loading }) {
   return (
-    <Grid container spacing={2} mt={2}>
-      {movies.map((movie, index) => (
+    <Grid container spacing={2}>
+      {movies && movies.map((movie, index) => (
         <Grid key={movie.id} item xs={6} md={4} lg={3}>
           <MovieCard movie={movie} />
         </Grid>

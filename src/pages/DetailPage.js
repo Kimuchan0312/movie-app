@@ -26,19 +26,22 @@ function DetailPage() {
   return (
     <Stack
       spacing={2}
-      direction="row"
       useFlexGap
       flexWrap="wrap"
       alignItems="center"
       justifyContent="center"
+      sx={{ backgroundColor: "black" }}
     >
       <NavBar blackBackground sx={{ height: "50px" }} />
-      <Stack direction="row">
-        <Card sx={{ padding: 10 }}>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        sx={{ width: { xs: "100%", sm: "auto" }, backgroundColor: "black" }}
+      >
+        <Card sx={{ padding: 10, backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: { xs: "column", sm: "row" },
               alignItems: "flex-start",
               spacing: 2,
             }}
@@ -50,25 +53,25 @@ function DetailPage() {
               image={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
               alt={movie.original_title}
             />
-            <Box sx={{ display: "flex", flexDirection: "column", paddingTop: 5, paddingLeft: 10 }}>
-              <Typography component="div" variant="h5">
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                paddingTop: 5,
+                paddingLeft: 10,
+                color: "white",
+              }}
+            >
+              <Typography component="div" variant="h5" color="white">
                 {movie?.title || movie?.name || movie?.original_name}
               </Typography>
-              <Typography
-                variant="subtitle1"
-                color="text.secondary"
-                component="div"
-              >
+              <Typography variant="subtitle1" color="white" component="div">
                 {movie?.release_date} | {movie?.original_language}
               </Typography>
               <Typography component="div" variant="h6">
                 Overview:
               </Typography>
-              <Typography
-                variant="subtitle1"
-                color="text.secondary"
-                component="div"
-              >
+              <Typography variant="subtitle1" color="white" component="div">
                 {movie?.overview}
               </Typography>
             </Box>

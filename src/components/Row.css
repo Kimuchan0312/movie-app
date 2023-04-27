@@ -22,7 +22,7 @@
     transition: transform 450ms;
 }
 
-.row_posters:hover {
+.row_poster:hover {
     transform: scale(1.08);
 }
 

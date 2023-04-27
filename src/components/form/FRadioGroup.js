@@ -6,7 +6,7 @@ import {
   FormControlLabel,
 } from "@mui/material";
 
-function FRadioGroup({ name, options, getOptionLabel = [], ...other }) {
+function FRadioGroup({ name, options, getOptionLabel, ...other }) {
   const { control } = useFormContext();
 
   return (
@@ -20,7 +20,9 @@ function FRadioGroup({ name, options, getOptionLabel = [], ...other }) {
               <FormControlLabel
                 key={option}
                 value={option}
-                control={<Radio />}
+                control={<Radio sx={{'&.Mui-checked': {
+                  color: "#111",
+                },}} />}
                 label={getOptionLabel?.length ? getOptionLabel[index] : option}
               />
             ))}
